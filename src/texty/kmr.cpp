@@ -26,3 +26,8 @@ auto compare = [&](int a_beg, int a_len, int b_beg, int b_len) {
 		return a_len < b_len; // shorter is lexicographically earlier
 	return ahash < bhash;
 };
+// Id of the
+auto get_id = [&](int beg, int len) {
+	int k = 31 - __builtin_clz(len);
+	return PII(kmr[k][beg], kmr[k][beg + len - (1 << k)]);
+};
