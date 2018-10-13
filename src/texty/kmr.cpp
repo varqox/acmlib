@@ -7,7 +7,20 @@ for (int step = 1; step * 2 <= (int)S.size(); step *= 2) {
 	int k = (int)kmr.back().size() - step;
 	REP (i, k)
 		v[i] = {{kmr.back()[i], kmr.back()[i + step]}, i};
-	sort(v.begin(), v.begin() + k, [](const IPI& a, const IPI& b) { return a.X < b.X; });
+	/// Uncomment the below comments to make it O(n lg n) instead of O(n lg^2 n)
+	v.resize(k);
+	// if (step == 1)
+	       sort(ALL(v), [](IPI& a, IPI& b) { return a.X < b.X; });
+	// else
+	// 	for (auto turn : {&PII::Y, &PII::X}) {
+	// 		auto tmp = v;
+	// 		int mx = k + step;
+	// 		static VI cnt;
+	// 		cnt.assign(mx + 1, 0);
+	// 		for (auto&& p : v) ++cnt[p.X.*turn + 1];
+	// 		REP (i, mx) cnt[i + 1] += cnt[i];
+	// 		REP (i, k) v[cnt[tmp[i].X.*turn]++] = tmp[i];
+	// 	}
 	kmr.EB(VI(k));
 	int id = 0;
 	REP (i, k) {
