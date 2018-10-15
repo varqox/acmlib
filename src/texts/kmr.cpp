@@ -1,13 +1,13 @@
 VI S; // Text
 // [...] fill S so that it contains the whole text
-VVI kmr(1, S); // i-th row represents framgents of length 2**i
+VVI kmr(1, S); // i-th row represents fragments of length 2**i
 using IPI = pair<PII, int>;
 V<IPI> v(S.size());
 for (int step = 1; step * 2 <= (int)S.size(); step *= 2) {
 	int k = (int)kmr.back().size() - step;
 	REP (i, k)
 		v[i] = {{kmr.back()[i], kmr.back()[i + step]}, i};
-	/// Uncomment the below comments to make it O(n lg n) instead of O(n lg^2 n)
+	// Uncomment the below comments to make it O(n lg n) instead of O(n lg^2 n)
 	v.resize(k);
 	// if (step == 1)
 	       sort(ALL(v), [](IPI& a, IPI& b) { return a.X < b.X; });
