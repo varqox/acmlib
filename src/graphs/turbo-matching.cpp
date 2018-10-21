@@ -14,14 +14,18 @@ bool dfsMatch(int a) {
 	return false;
 }
 
+void init(int n) {
+	VI(n, -1).swap(match);
+	vis.resize(n);
+}
+
 // zwraca liczbe skojarzonych wierzcholkow
+// potrafi wykorzystac juz znalezione polaczenia
 // numeracja grafu od 0
 // n - liczba wierzcholkow
 int turboMatching(int n) {
-	VI(n, -1).swap(match);
-	vis.resize(n);
+	int res = n - count(ALL(match), -1);
 	bool better = 1;
-	int res = 0;
 	while (better) {
 		better = 0;
 		fill(ALL(vis), 0);
