@@ -36,6 +36,7 @@ tem> char stub(...);
 #define dor > debug& operator<<
 struct debug {
 #ifdef DEBUG
+#define deb debug()
 	~debug() { cerr << nl; }
 	enif(!=) { cerr << boolalpha << h; ris; }
 	enif(==) {
@@ -52,11 +53,11 @@ struct debug {
 		ris << '}';
 	}
 #else
+#define if (0) deb debug()
 	tem dor(t&&) { ris; }
 #endif
 };
 
-#define deb debug()
 #define imie(h...) #h ": " << (h) << " "
 #define LOG(h...) deb << imie(h)
 #define DOG(h...) deb << #h ": " << dump(h) << " "
