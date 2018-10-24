@@ -53,7 +53,8 @@ struct debug {
 		ris << '}';
 	}
 #else
-#define if (0) deb debug()
+	operator int() { return 0; }
+#define deb 0 and debug()
 	tem dor(t&&) { ris; }
 #endif
 };
@@ -66,5 +67,7 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
+	V<VPII> v{{{1, 2}}, {}, {{3, 4}, {5, 6}}};
+	DOG(v);
 	return 0;
 }
