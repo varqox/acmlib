@@ -54,8 +54,8 @@ struct debug {
 	}
 #else
 	operator int() { return 0; }
-#define deb 0 and debug()
 	tem dor(t&&) { ris; }
+#define deb 0 and debug()
 #endif
 };
 
