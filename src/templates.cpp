@@ -4,7 +4,7 @@ using namespace std;
 
 #define FOR(i,a,n) for (auto i ## __ = (n), i = (a); i <= i ## __; ++i)
 #define FORD(i,a,n) for (auto i ## __ = (n), i = (a); i >= i ## __; --i)
-#define REP(i,n) FOR(i,0, n - 1)
+#define REP(i,n) FOR(i,0,(n) - 1)
 #define ALL(h) begin(h), end(h)
 #define EB emplace_back
 #define X first
