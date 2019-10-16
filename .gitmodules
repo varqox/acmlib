@@ -1,0 +1,3 @@
+[submodule "borrowed/mareksom-acmlib"]
+	path = borrowed/mareksom-acmlib
+	url = https://github.com/mareksom/acmlib

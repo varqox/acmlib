@@ -1,4 +1,4 @@
-#pragma gcc optimize("O3")
+#pragma GCC optimize("O3")
 #define _USE_MATH_DEFINES
 #include <bits/stdc++.h>
 using namespace std;
